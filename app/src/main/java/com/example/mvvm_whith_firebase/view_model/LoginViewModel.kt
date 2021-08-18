@@ -5,8 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mvvm_whith_firebase.repository.AuthenticationRepository
-import com.example.mvvm_whith_firebase.view.LogadoFragment
-import com.example.mvvm_whith_firebase.view.Navigation
+import com.example.mvvm_whith_firebase.model.Navigation
 import com.google.firebase.auth.FirebaseUser
 
 

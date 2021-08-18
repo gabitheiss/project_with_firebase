@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.mvvm_whith_firebase.view.MainFragment
-import com.example.mvvm_whith_firebase.view.Navigation
+import com.example.mvvm_whith_firebase.model.Navigation
 
 class MainActivity : AppCompatActivity(), Navigation {
 

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvm_whith_firebase.R
+import com.example.mvvm_whith_firebase.model.Navigation
 import com.example.mvvm_whith_firebase.view_model.LoginViewModel
 import com.google.firebase.auth.FirebaseUser
 
