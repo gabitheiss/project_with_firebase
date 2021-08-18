@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944649123295",
+    "project_id": "mvvm-with-firebase-58fea",
+    "storage_bucket": "mvvm-with-firebase-58fea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944649123295:android:309b311b16593c6b42006a",
+        "android_client_info": {
+          "package_name": "com.example.mvvm_whith_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944649123295-pi8b7i6p9r7db28ovklcpa4iokq69ha6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-oGPdhpLGkQTFzjJY_BpndDPoHUlCvXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944649123295-pi8b7i6p9r7db28ovklcpa4iokq69ha6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
