@@ -1,5 +1,6 @@
 package com.example.mvvm_whith_firebase.view
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.View
@@ -21,7 +22,13 @@ class LogadoFragment(interfaceNavigate: Navigation) : Fragment(R.layout.logado_f
 
     private lateinit var viewModel: LogadoViewModel
     private lateinit var recyclerView: RecyclerView
-    private val adapter = AdapterList()
+
+    //criar intent para chamar o fragment de detalhes
+    private val adapter = AdapterList(){ conta ->
+
+        interfaceNavigate.goToFragment(DetailsFragment(interfaceNavigate, conta))
+
+    }
 
     val observerContas = Observer<List<Conta>>{
         adapter.refresh(it)
@@ -41,6 +48,7 @@ class LogadoFragment(interfaceNavigate: Navigation) : Fragment(R.layout.logado_f
         viewModel.error.observe(viewLifecycleOwner,observerError)
         viewModel.contas.observe(viewLifecycleOwner,observerContas)
 
+        loadData()
 
         view.findViewById<Button>(R.id.buttonSalvar).setOnClickListener {
             val inputName = view.findViewById<EditText>(R.id.inputNome)
@@ -52,10 +60,10 @@ class LogadoFragment(interfaceNavigate: Navigation) : Fragment(R.layout.logado_f
                 )
             }
         }
+    }
 
-        fun loadData(){
-            viewModel.buscarConta()
-        }
+    fun loadData(){
+        viewModel.buscarConta()
     }
 
 }

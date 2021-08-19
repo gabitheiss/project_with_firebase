@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_whith_firebase.R
 import com.example.mvvm_whith_firebase.model.Conta
 
-class AdapterList: RecyclerView.Adapter<ContaViewHolder>() {
+class AdapterList(val onClick : (Conta) -> Unit): RecyclerView.Adapter<ContaViewHolder>() {
 
     private var listaContas: MutableList<Conta> = mutableListOf()
 
@@ -21,6 +21,7 @@ class AdapterList: RecyclerView.Adapter<ContaViewHolder>() {
     override fun onBindViewHolder(holder: ContaViewHolder, position: Int) {
         listaContas[position].apply{
             holder.bind(this)
+            holder.itemView.setOnClickListener{onClick(this)}
         }
     }
 
@@ -40,11 +41,11 @@ class AdapterList: RecyclerView.Adapter<ContaViewHolder>() {
 class ContaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     fun bind(conta: Conta) {
-        setData(conta.name, R.id.textConta)
-        setData(conta.price.toString(), R.id.textValor)
+        setData(conta.nome, R.id.textConta)
+        setData(conta.valor.toString(), R.id.textValor)
     }
 
-    private fun setData(value: String?, @IdRes componentId: Int) {
+     fun setData(value: String?, @IdRes componentId: Int) {
         itemView.findViewById<TextView>(componentId).apply {
             text = value
         }

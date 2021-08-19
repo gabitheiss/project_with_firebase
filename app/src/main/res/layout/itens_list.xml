@@ -7,6 +7,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -25,25 +26,17 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Conta"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:textColor="#027878"
                 app:layout_constraintStart_toStartOf="@+id/textConta"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="12dp" />
 
-            <TextView
-                android:id="@+id/uid"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:text="ID"
-                app:layout_constraintEnd_toEndOf="@+id/textConta"
-                tools:layout_editor_absoluteY="12dp" />
 
             <TextView
                 android:id="@+id/textConta"

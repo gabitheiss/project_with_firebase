@@ -1,28 +1,30 @@
 package com.example.mvvm_whith_firebase.model
 
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QueryDocumentSnapshot
 
 data class Conta(
     var uid: String?,
-    val name: String?,
-    val price: Double?
+    val nome: String?,
+    val valor: Double?
 ) {
     companion object {
 
         fun fromData(snapshot: QueryDocumentSnapshot): Conta {
             return Conta(
                 uid = snapshot.id,
-                name = snapshot.data["name"] as? String,
-                price = snapshot.data["price"] as? Double
+                nome = snapshot.data["nome"] as? String,
+                valor = snapshot.data["valor"] as? Double
             )
         }
 
-        fun fromDocument(doc: DocumentReference): Conta{
+        //funcao para chamar somente uma conta para a tela detalhes
+        fun fromDocument(doc: DocumentSnapshot): Conta{
             return Conta(
                 uid = doc.id,
-                name = null,
-                price = null
+                nome = doc["nome"] as? String ,
+                valor = doc["valor"] as? Double
             )
         }
     }
