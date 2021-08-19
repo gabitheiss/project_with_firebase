@@ -1,6 +1,5 @@
 package com.example.mvvm_whith_firebase.model
 
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QueryDocumentSnapshot
 

@@ -59,4 +59,18 @@ class ContasRepository {
     }
 
 
+    fun deleteConta(uid: String, callback: (Boolean) -> Unit) {
+        dataBase.collection(CONTAS_COLLETION)
+            .document(uid)
+            .delete()
+            .addOnSuccessListener {
+                callback(true)
+            }
+            .addOnFailureListener { exception ->
+                callback(false)
+            }
+    }
+
+
 }
+

@@ -14,6 +14,9 @@ class DetailsViewModel : ViewModel() {
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
+    private val _deleteSuccess = MutableLiveData<Boolean>()
+    val deleteSuccess: LiveData<Boolean> = _deleteSuccess
+
 
     private val contasRepository = ContasRepository()
 
@@ -25,6 +28,11 @@ class DetailsViewModel : ViewModel() {
             } else {
                 _conta.value = conta
             }
+        }
+    }
+    fun deleteItem(uid: String) {
+        contasRepository.deleteConta(uid) { success ->
+            _deleteSuccess.value = success
         }
     }
 }
