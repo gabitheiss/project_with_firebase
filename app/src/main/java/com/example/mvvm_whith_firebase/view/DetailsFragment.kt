@@ -24,10 +24,8 @@ class DetailsFragment(val interfaceNavigate: Navigation, val conta: Conta) :
         if (it) {
             interfaceNavigate.goToFragment(LogadoFragment(interfaceNavigate))
         } else {
-            Snackbar.make(
-                binding.root,
-                "Erro de conexão, registro não apagado!",
-                Snackbar.LENGTH_LONG
+            //root chama o "pai" não precisa implementar a view por exemplo
+            Snackbar.make(binding.root, "Erro de conexão, registro não apagado!", Snackbar.LENGTH_LONG
             ).show()
         }
     }
