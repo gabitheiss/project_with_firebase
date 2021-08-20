@@ -5,6 +5,7 @@ import org.junit.Test
 
 class UserTest {
 
+
     @Test
     fun `email contem @`(){
         val resultado = User("t_gaaby@hotmail.com", "1234566", "1234566", "saaaa").validarUser()
