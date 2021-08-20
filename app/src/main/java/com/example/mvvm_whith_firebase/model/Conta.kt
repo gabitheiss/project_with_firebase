@@ -8,6 +8,17 @@ data class Conta(
     val nome: String?,
     val valor: Double?
 ) {
+
+    fun validarConta(): Boolean {
+        if (valor == null) {
+            return false
+        }
+        if (valor < 0) {
+            return false
+        }
+        return true
+    }
+
     companion object {
 
         fun fromData(snapshot: QueryDocumentSnapshot): Conta {
@@ -19,10 +30,10 @@ data class Conta(
         }
 
         //funcao para chamar somente uma conta para a tela detalhes
-        fun fromDocument(doc: DocumentSnapshot): Conta{
+        fun fromDocument(doc: DocumentSnapshot): Conta {
             return Conta(
                 uid = doc.id,
-                nome = doc["nome"] as? String ,
+                nome = doc["nome"] as? String,
                 valor = doc["valor"] as? Double
             )
         }
